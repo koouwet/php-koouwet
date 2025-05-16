@@ -1,6 +1,5 @@
 <?php
 
-
 namespace src\Models\Articles;
 use src\Models\Users\User;
 

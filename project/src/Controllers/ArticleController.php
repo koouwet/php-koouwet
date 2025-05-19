@@ -38,7 +38,7 @@ class ArticleController
         $article->title = $_POST['title'];
         $article->text = $_POST['text'];
         $article->save();
-        return header('Location:http://localhost/student-241/321/Project/www/article/'.$article->getId());
+        return header('Location:http://localhost/php/project/www/article/'.$article->getId());
     }
 
     public function create(){
@@ -51,12 +51,12 @@ class ArticleController
         $article->text = $_POST['text'];
         $article->authorId = 1;
         $article->save();
-        return header('Location:http://localhost/student-241/321/Project/www/index.php');
+        return header('Location:http://localhost/php/project/www/index.php');
     }
 
     public function delete(int $id){
         $article = Article::getById($id);
         $article->delete();
-        return header('Location:http://localhost/student-241/321/Project/www/index.php');
+        return header('Location:http://localhost/php/project/www/index.php');
     }
 }

@@ -2,7 +2,7 @@
 
     return [
         'host'=>'localhost',
-        'dbname'=>'project-321',
+        'dbname'=>'project',
         'user'=>'root',
         'password'=>''
     ];

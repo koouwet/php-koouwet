@@ -1,4 +1,5 @@
 <?php
+    // require(dirname(__DIR__).'\\src\Models\ActiveRecordEntity.php');
 
 spl_autoload_register(function(string $className){
     require(dirname(__DIR__).'\\'.$className.'.php');

@@ -3,6 +3,7 @@
 namespace src\Models\Articles;
 use src\Models\ActiveRecordEntity;
 use src\Models\Users\User;
+use src\Models\Comments\Comment;
 
 class Article extends ActiveRecordEntity
 {
@@ -39,5 +40,9 @@ class Article extends ActiveRecordEntity
         public function getCreatedAt()
         {
             return $this->createdAt;
+        }
+        public function getComments()
+        {
+            return Comment::findByArticleId($this->id);
         }
     }

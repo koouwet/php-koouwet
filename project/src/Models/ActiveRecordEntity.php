@@ -94,4 +94,9 @@ abstract class ActiveRecordEntity
     }
 
     protected abstract static function getTableName();
+
+    // Абстрактный метод для получения комментариев, если сущность поддерживает их
+    public function getComments() {
+        return [];
+    }
 }

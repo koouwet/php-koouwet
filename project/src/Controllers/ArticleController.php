@@ -54,9 +54,17 @@ class ArticleController
         return header('Location:http://localhost/php/project/www/index.php');
     }
 
-    public function delete(int $id){
-        $article = Article::getById($id);
-        $article->delete();
-        return header('Location:http://localhost/php/project/www/index.php');
+    public function delete($articleId)
+    {
+        $article = Article::getById($articleId);
+        if ($article) {
+            // Удаляем все комментарии к статье
+            foreach ($article->getComments() as $comment) {
+                $comment->delete();
+            }
+            $article->delete();
+        }
+        header('Location: /php/project/www/');
+        exit;
     }
 }

@@ -10,4 +10,9 @@ return [
     '~^article/create$~'=>[src\Controllers\ArticleController::class, 'create'],
     '~^article/store$~'=>[src\Controllers\ArticleController::class, 'store'],
     '~^hello/(.+)$~'=>[src\Controllers\MainController::class,'sayHello'],
+
+    '~^comment/add$~' => [src\Controllers\CommentController::class, 'addFromPost'],
+    '~^comment/delete$~' => [src\Controllers\CommentController::class, 'deleteFromPost'],
+    '~^comment/edit/(\d+)$~' => [src\Controllers\CommentController::class, 'editForm'],
+    '~^comment/edit$~' => [src\Controllers\CommentController::class, 'editFromPost'],
 ];

@@ -1,10 +1,11 @@
-<!-- Задачи на preg_match[_all] Задачи не всегда можно решить с помощью одной только регулярки. Может понадобится еще что-нибудь дописать на PHP (не всегда, но такое может быть). Дана строка с текстом, в котором могут быть емейлы. С помощью preg_match_all найдите все емэйлы. -->
+<!-- На '.', символы. Дана строка 'aba aca aea abba adca abea'. Напишите регулярку, которая найдет строки abba и abea, не захватив adca -->
 
 
 <?php
-$pattern='/\b(.)\1+\b/i';
-$text = 'aaa bcd xxx efg';
-if (preg_match_all($pattern,$text, $matches)){
-    print_r($matches[0]);
-}
+$string = 'aba aca aea abba adca abea';
+$pattern = '/\\bab[be]a\\b/';
+
+preg_match_all($pattern, $string, $matches);
+
+print_r($matches[0]);
 ?>
